@@ -1,4 +1,4 @@
-export const eventColumns = [
+export const eventSource = [
     {
         field: "idEvent",
         headerName: "id",
