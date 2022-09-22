@@ -3,12 +3,12 @@ import EventService from './services/EventService'
 export const userColumns = [
     {
         field: "idEvent",
-        headerName: "idEvent",
+        headerName: "id",
         width: 70
     },
     {
         field: "image",
-        headerName: "Date evenement",
+        headerName: "Img",
         width: 20,
         renderCell: (params) => {
             return (
@@ -24,15 +24,15 @@ export const userColumns = [
         }
     },
     {
-        field: "heureEvenement",
-        headerName: "Heure event",
+        field: "titre",
+        headerName: "Titre",
         width: 230
     },
 
     {
-        field: "lieu event",
-        headerName: "Lieu event",
-        width: 100
+        field: "description",
+        headerName: "Description",
+        width: 250
     }, {},
 ];
 
