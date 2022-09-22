@@ -2,14 +2,23 @@ import "./datatable.scss";
 import { DataGrid } from "@mui/x-data-grid";
 import { userColumns, userRows } from "../../datatablesource";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import EventService from "../../services/EventService";
 
 const Datatable = () => {
-  const [data, setData] = useState(userRows);
+  const [data, setData] = useState(EventService.getEvents());
+  useEffect(() => {
+    const logInterest = async () => {
+        const resp = await EventService.getEvents();
+        setData(resp.data)
+    };
+    logInterest();
+}, [data, setData])
 
-  const handleDelete = (id) => {
-    setData(data.filter((item) => item.id !== id));
+  const handleDelete = (idEvent) => {
+    setData(data.filter((item) => item.idEvent !== idEvent));
   };
+
 
   const actionColumn = [
     {
@@ -24,7 +33,7 @@ const Datatable = () => {
             </Link>
             <div
               className="deleteButton"
-              onClick={() => handleDelete(params.row.id)}
+              onClick={() => handleDelete(params.row.idEvent)}
             >
               Delete
             </div>
@@ -47,6 +56,7 @@ const Datatable = () => {
         columns={userColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
+        getRowId={(data)=> data.idEvent } 
         checkboxSelection
       />
     </div>
