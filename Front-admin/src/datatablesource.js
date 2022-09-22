@@ -25,6 +25,13 @@ export const userColumns = [
       width: 100,
     },
     {
+      field: "heure_vent",
+      headerName: "Date",
+      width: 100,
+    },
+    { field: "Note_vent",
+    headerName: "Note",
+    width: 100,
      
     },
   ];
