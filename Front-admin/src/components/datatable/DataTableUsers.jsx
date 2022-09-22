@@ -56,7 +56,7 @@ const DataTableUsers = () => {
         columns={userColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
-        getRowId={(data)=> data.idEvent } 
+        getRowId={(data)=> data.idUser} 
         checkboxSelection
       />
     </div>

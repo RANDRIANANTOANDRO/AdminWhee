@@ -1,6 +1,7 @@
 import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import ListUsers from "./pages/list/ListUsers";
+import ListEvenements from "./pages/list/ListEvenements";
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -27,8 +28,8 @@ function App() {
                 element={<New inputs={userInputs} title="Add New User" />}
               />
             </Route>
-            <Route path="products">
-              <Route index element={<Home />} />
+            <Route path="events">
+              <Route index element={<ListEvenements/>} />
               <Route path=":productId" element={<Single />} />
               <Route
                 path="new"

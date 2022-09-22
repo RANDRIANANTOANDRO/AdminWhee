@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import EventService from "../../services/EventService";
 
-const Datatable = () => {
+const DatatableEvents = () => {
   const [data, setData] = useState(EventService.getEvents());
   useEffect(() => {
     const logInterest = async () => {
@@ -56,11 +56,11 @@ const Datatable = () => {
         columns={userColumns.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
-        getRowId={(data)=> data.idEvent } 
+        getRowId={(data)=> data.idEvent} 
         checkboxSelection
       />
     </div>
   );
 };
 
-export default Datatable;
+export default DatatableEvents;

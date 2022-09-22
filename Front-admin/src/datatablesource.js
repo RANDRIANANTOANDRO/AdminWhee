@@ -2,7 +2,7 @@ import {EventSeatRounded} from '@mui/icons-material';
 import EventService from './services/EventService'
 export const userColumns = [
     {
-        field: "idEvent",
+        field: "id",
         headerName: "id",
         width: 70
     },
