@@ -15,4 +15,4 @@ const ListUser = () => {
   )
 }
 
-export default ListUser
+export default List
